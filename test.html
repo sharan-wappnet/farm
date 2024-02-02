@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Website</title>
+  <link rel="stylesheet" href="test.css">
+  <script src="script.js" defer></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="main-container">
+    <header class="header"> 
+      <img src="images/logo-1.svg" alt="" style="width: 11%;height:45px ; "> Farmer's Club
+    </header>
+    <nav class="navigation">
+        <a class="header_link" href="#">
+          <i class="fa-house fa"></i> Home</a>
+        <a class="header_link" href="#"><i class="fa-solid fa-address-card"></i> About Us</a>
+        <a class="header_link" href="#">Pages</a>
+    </nav>
+</div>
+
+<section >
+    <div class="row"  id="row1">
+    <div class="col-5" >
+        <div class="banner">
+          <h1 class="Tagline_1">Our Passion for Agriculture Nurturing Growth and Sustaining the Future</h1>
+          <p class="Tagdes1">Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
+          <!-- <a href="#" class="button_1">Get Started</a> -->
+        </div>
+      </div>
+      <div class="col-3">
+      </div>
+      <div class="col-3">
+        <img src="images/poster1.png" class="poster1">
+      </div>
+    </div>
+</section>
+
+<section>
+
+        <div style="  color: #204e51;
+            text-align: center;
+            font: 700 72px/104% Montserrat, sans-serif;
+            margin-top: 2.15rem;">
+            Why we need agriculture
+        </div>
+
+        <div class="row" style="justify-content: space-around; margin-top: 2.25rem; margin-bottom: 2.25rem ;">
+            <div class="col-2">
+                <div class="atri">
+                    <img src="images/Sustenance.png" alt="" class="subatri">
+                    <div class="website-content">Sustenance</div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="atri">
+                    <img src="images/Nourishment.png" alt="" class="subatri">
+                    <div class="website-content">Nourishment</div>
+                </div>
+            </div><div class="col-2">
+                <div class="atri">
+                    <img src="images/Employment.png" alt="" class="subatri">
+                    <div class="website-content">Employment</div>
+                </div>
+            </div><div class="col-2">
+                <div class="atri">
+                    <img src="images/community.png" alt="" class="subatri">
+                    <div class="website-content">Community</div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section style="margin-top: 5%;">
+  <div class="scroller">
+      <div class="scroll" id="scroll-container">
+          <!-- Images will be dynamically added here -->
+      </div>
+  </div>
+</section>
+<script>
+  // Array of image URLs
+  const imageUrls = [
+      "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://img.freepik.com/free-photo/female-researchers-examined-tobacco-leaves_1150-5873.jpg?w=1380&t=st=1706869525~exp=1706870125~hmac=f4a2ecc31d5edc2c8eeb41e00c71f644e51caf85a6d09fa1066d95a018d99e8f",
+      "https://img.freepik.com/premium-photo/organic-farm-worker-testing-collect-environment-data-from-bok-choy-organic-vegetable-greenhouse-farm-garden_265022-34845.jpg?w=1380",
+      "https://img.freepik.com/free-photo/smart-agriculture-iot-with-hand-planting-tree-background_53876-124626.jpg?w=1480&t=st=1706869622~exp=1706870222~hmac=d917baf30e81856873f8cbd884ed9745132d0f29a0492cc22c83e3b7f50b1b42",
+      "https://img.freepik.com/free-photo/sunset-golden-wheat-field-nature-bountiful-harvest-generated-by-artificial-intelligence_25030-60668.jpg?t=st=1706869641~exp=1706873241~hmac=f41c5c46f46367d79b06f2c47a7aede94d60dd7bdf9412f7750a7d1b54e2018f&w=1480",
+      "https://img.freepik.com/free-photo/harvesting-wheat-tranquil-meadow-sunset-generated-by-ai_24640-80628.jpg?w=1480&t=st=1706869669~exp=1706870269~hmac=7fc5246a71355df73813796daf3db546424960eb488bfe6feac458b8cb7162a3",
+      "https://img.freepik.com/free-photo/drone-spraying-fertilizer-vegetable-green-plants-agriculture-technology-farm-automation_35913-2569.jpg?w=1380&t=st=1706869686~exp=1706870286~hmac=96533eec4921cf52c2aa0929699e9d1780a58d0294033b430b09ba3f22d9ee52",
+      // Add more image URLs as needed
+  ];
+
+  const scrollContainer = document.getElementById('scroll-container');
+
+  // Dynamically create and append image elements to the scroll container
+  imageUrls.forEach(url => {
+      const imgElement = document.createElement('div');
+      imgElement.classList.add('scroll_itm');
+      imgElement.innerHTML = `<img src="${url}" alt="">`;
+      scrollContainer.appendChild(imgElement);
+  });
+</script>
+
+  <section style="margin-top: 5%;">
+    <div >
+      <ul class="d-flex " id="news-list"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiKey = 'c47146c1bec647e195a1d08c7aacee27'; // Replace 'YOUR_API_KEY' with your actual NewsAPI.org API key
+            const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    const newsList = document.getElementById('news-list');
+                    data.articles.slice(0,5).forEach(article => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('news-item');
+                        listItem.innerHTML = `
+                        <div class="row">
+                          <div class="col" style="justifycontent : space-between;">
+                        <div class="news-card">
+                        <img class="news-image" src="${article.urlToImage}" alt="">
+                        <div class="news-content">
+                          <h3 class="news-title">${article.title}</h3>
+                          <p class="news-description">${article.description}</p>
+                          <a href="${article.url}" class="read-more-btn" target="_blank">Read more</a>  
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+                            
+                        `;
+                        newsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching the news:', error);
+                });
+        });
+    </script>
+
+  </section>
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="#">Privacy Policy</a>
+      <a class="footer-link" href="#">Terms of Service</a>
+    </div>
+    <p class="footer-text">© 2022 My Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

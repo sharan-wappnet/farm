@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display News Articles</title>
+    <style>
+        /* Add your CSS styles here */
+        #news-list {
+           display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .news-title {
+            font-weight: bold;
+            color: #333;
+        }
+        .news-description {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest News Articles</h1>
+    <ul id="news-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const apiKey = 'c47146c1bec647e195a1d08c7aacee27'; // Replace 'YOUR_API_KEY' with your actual NewsAPI.org API key
+            const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const newsList = document.getElementById('news-list');
+                    data.articles.forEach(article => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('news-item');
+                        listItem.innerHTML = `
+                            <h3 class="news-title">${article.title}</h3>
+                            <p class="news-description">${article.description}</p>
+                            <a href="${article.url}" target="_blank">Read more</a>
+                        `;
+                        newsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching the news:', error);
+                });
+        });
+    </script>
+</body>
+</html>

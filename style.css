@@ -1,0 +1,65 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .clock {
+    float: left;
+  }
+  
+  .slideshow-container {
+    float: right;
+  }
+  
+  .slides {
+    display: none;
+  }
+  
+  .slides img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .news {
+    background-color: #fff;
+    padding: 20px 0;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  
+    .slideshow-container {
+      float: none;
+      margin-top: 10px;
+    }
+  }
+  
