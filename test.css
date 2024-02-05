@@ -204,6 +204,15 @@
 }
 
 /* news articals */
+.News{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #204e51;
+  text-align: center;
+  align-self: center;
+  font: 700 72px/114% Montserrat, sans-serif;
+
+}
 
 .news-card {
   width: 300px; /* Set the desired width */
@@ -304,6 +313,7 @@
 }
 
 .footer {
+  margin-top: 2%;
     color: #000000;
     padding: 10px 0;
     text-align: center;
